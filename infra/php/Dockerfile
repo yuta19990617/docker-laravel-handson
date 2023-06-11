@@ -1,5 +1,9 @@
 FROM php:8.1-fpm-buster
 
+# install composer
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer
 
